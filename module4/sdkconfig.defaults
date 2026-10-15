@@ -1,0 +1,8 @@
+# Mount the storage partition as SPIFFS and register it in the partition table
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# The ESP32-DevKitC V4 has 4MB of flash. The partition table needs >2MB
+# (app 1M + storage 1M + nvs/phy), so bump the default 2MB up to 4MB.
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
